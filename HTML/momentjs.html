@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Moment DateTime Format</title>
+    <!-- reference Moment.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- reference Moment-Timezone.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.36/moment-timezone-with-data.min.js"></script>
+  </head>
+  <body>
+    <h2>Lab #8: Moment js</h2>
+    <div>
+      <h3>Current Time in London:</h3>
+      <p id="londonTime"></p>
+    </div>
+    <script>
+
+      // 1. Calculate the number of days between your birthdate and the current date
+      const birthdate = moment("1992-07-07");
+      const currentDate = moment();
+
+      const daysDifference = currentDate.diff(birthdate, "days");
+
+      console.log(
+        `Number of days between my birthdate and current date: ${daysDifference}`
+      );
+      // Result: "Number of days between my birthdate and current date: 11401"
+
+/*
+      // 2. Display the number of years, months, and days between your birthdate and current date
+      // Calculate the difference in years, months, and days
+      const birthdate = moment("1992-07-07");
+      const currentDate = moment();
+
+      const yearsDifference = currentDate.diff(birthdate, "years");
+      birthdate.add(yearsDifference, "years"); // Add years to birthdate
+      const monthsDifference = currentDate.diff(birthdate, "months");
+      birthdate.add(monthsDifference, "months"); // Add months to birthdate
+      const daysDifference = currentDate.diff(birthdate, "days");
+    //   birthdate.add(daysDifference, "days"); // Add days to birthdate
+
+      console.log(
+        `Number of years, months, and days between my birthdate and current date: 
+        ${yearsDifference} years, ${monthsDifference} months, ${daysDifference} days`
+      );
+      // Result: "Number of years, months, and days between my birthdate and current date: 31 years, 2 months, 17 days"
+      
+
+      // 3. Given two dates, display the date closest to the current date
+      // Define two dates
+      const date1 = moment("2023-09-15");
+      const date2 = moment("2023-10-10");
+      const currentDate = moment();
+
+      // Calculate the differences between current date and the two given dates
+      const diff1 = Math.abs(currentDate.diff(date1, "days"));
+      const diff2 = Math.abs(currentDate.diff(date2, "days"));
+
+      // Determine which date is closer to the current date
+      let closestDate;
+      if (diff1 < diff2) {
+        closestDate = date1;
+      } else {
+        closestDate = date2;
+      }
+
+      console.log(
+        `Closest date to the current date: ${closestDate.format("YYYY-MM-DD")}`
+      );
+      // Result: Closest date to the current date: 2023-09-15
+
+
+      // 4. Given two dates, display whether the first date is before or after the second date
+      // Define two dates
+      const date1 = moment("2023-09-15");
+      const date2 = moment("2023-10-10");
+
+      // Check if date1 is before date2
+      if (date1.isBefore(date2)) {
+        console.log("Date 1 is before Date 2");
+      } else {
+        console.log("Date 1 is after Date 2");
+      }
+      // Result: "Date 1 is before Date 2"
+
+
+      // 5. Display the current time in London
+      // Get the current time in London
+      const londonTime = moment()
+        .tz("Europe/London")
+        .format("YYYY-MM-DD HH:mm:ss");
+
+      // Display the London time
+      document.getElementById("londonTime").textContent = londonTime;
+      // Result: 2023-09-24 04:17:32
+*/
+    </script>
+  </body>
+</html>
